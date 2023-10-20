@@ -26,6 +26,9 @@ class ItemModel {
         storage.saveContext()
     }
     
+    /**
+            Use this one to update inventory, instead of update stock take
+     */
     func updateItem(item: Item, newName: String = "", newInventory: Int32) throws {
         let oldInventory = item.inventory
             
