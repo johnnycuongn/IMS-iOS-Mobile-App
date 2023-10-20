@@ -8,23 +8,26 @@
 import Foundation
 import CoreData
 
+enum StockTakeStatus: String {
+    case pending = "Pending"
+    case complete = "Complete"
+    case canceled = "Canceled"
+    
+    // Convert a StockTakeStatus enum to String
+    func stringValue() -> String {
+        return self.rawValue
+    }
+    
+    // Create a StockTakeStatus enum from String
+    static func from(string: String) -> StockTakeStatus? {
+        return StockTakeStatus(rawValue: string)
+    }
+}
+
 class StockTakeModel {
     
-    enum StockTakeStatus: String {
-        case pending = "Pending"
-        case complete = "Complete"
-        case canceled = "Canceled"
-        
-        // Convert a StockTakeStatus enum to String
-        func stringValue() -> String {
-            return self.rawValue
-        }
-        
-        // Create a StockTakeStatus enum from String
-        static func from(string: String) -> StockTakeStatus? {
-            return StockTakeStatus(rawValue: string)
-        }
-    }
+    static let shared: StockTakeModel = StockTakeModel()
+    let itemModel = ItemModel.shared
     
     let storage: CoreDataStorage = CoreDataStorage.shared
     
@@ -40,19 +43,20 @@ class StockTakeModel {
         storage.saveContext()
     }
  
-    func updateStockTake(stockTake: StockTake, newStatus: StockTakeStatus) {
+    func updateStockTake(stockTake: StockTake, newStatus: StockTakeStatus) throws {
         if let oldStatusString = stockTake.status,
            let oldStatus = StockTakeStatus.from(string: oldStatusString),
            oldStatus == .pending && newStatus == .complete {
            
             // Update item inventory
             if let item = stockTake.item {
-                item.inventory = stockTake.inventory_to
+                try itemModel.updateItem(item: item, newInventory: stockTake.inventory_to)
             }
         }
         stockTake.status = newStatus.stringValue()
         stockTake.updated_at = Date()
         storage.saveContext()
+        
     }
     
     func getStockTakes() -> [StockTake] {

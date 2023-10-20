@@ -10,7 +10,9 @@ import CoreData
 
 class ItemModel {
     
+    static let shared = ItemModel()
     let storage: CoreDataStorage = CoreDataStorage.shared
+    let stockTakeModel = StockTakeModel.shared
     
     /**
      itemModel.addItem(name: "Item 1", inventory: 50, lowerLimit: 10, barcode: "1234567890")
@@ -24,8 +26,24 @@ class ItemModel {
         storage.saveContext()
     }
     
-    func updateItem(item: Item, newName: String) throws {
-        item.name = newName
+    func updateItem(item: Item, newName: String = "", newInventory: Int32) throws {
+        let oldInventory = item.inventory
+            
+        // Update item properties
+        if (newName.trimmingCharacters(in: .whitespaces) != "" && newName != item.name) {
+            item.name = newName
+        }
+        
+        item.inventory = newInventory
+        
+        // Check if inventory has changed
+        if oldInventory != newInventory {
+            // Automatically create a stock take with status 'Complete'
+            try stockTakeModel.addStockTake(status: StockTakeStatus.complete, inventoryFrom: oldInventory, inventoryTo: newInventory, description: "Automatic Stock Take for \(item.name)", item: item)
+        }
+        
+        checkInventoryAndNotify(item: item)
+        
         storage.saveContext()
     }
     
