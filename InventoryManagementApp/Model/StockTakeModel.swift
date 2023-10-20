@@ -10,11 +10,27 @@ import CoreData
 
 class StockTakeModel {
     
+    enum StockTakeStatus: String {
+        case pending = "Pending"
+        case accepted = "Accepted"
+        case canceled = "Canceled"
+        
+        // Convert a StockTakeStatus enum to String
+        func stringValue() -> String {
+            return self.rawValue
+        }
+        
+        // Create a StockTakeStatus enum from String
+        static func from(string: String) -> StockTakeStatus? {
+            return StockTakeStatus(rawValue: string)
+        }
+    }
+    
     let storage: CoreDataStorage = CoreDataStorage.shared
     
-    func addStockTake(status: String, inventoryFrom: Int32, inventoryTo: Int32, description: String, item: Item) {
+    func addStockTake(status: StockTakeStatus, inventoryFrom: Int32, inventoryTo: Int32, description: String, item: Item) {
         let stockTake = StockTake(context: storage.context)
-        stockTake.status = status
+        stockTake.status = status.stringValue()
         stockTake.inventory_from = inventoryFrom
         stockTake.inventory_to = inventoryTo
         stockTake.stock_description = description
@@ -23,9 +39,9 @@ class StockTakeModel {
         stockTake.item = item
         storage.saveContext()
     }
-    
-    func updateStockTake(stockTake: StockTake, newStatus: String) {
-        stockTake.status = newStatus
+ 
+    func updateStockTake(stockTake: StockTake, newStatus: StockTakeStatus) {
+        stockTake.status = newStatus.stringValue()
         stockTake.updated_at = Date()
         storage.saveContext()
     }
