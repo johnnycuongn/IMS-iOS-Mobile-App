@@ -16,6 +16,7 @@
 		40634DBF2AE2319100A8D2B0 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DBE2AE2319100A8D2B0 /* ItemModel.swift */; };
 		40634DC22AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC02AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift */; };
 		40634DC32AE2320F00A8D2B0 /* StockTake+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC12AE2320F00A8D2B0 /* StockTake+CoreDataProperties.swift */; };
+		40634DC52AE2450E00A8D2B0 /* UPCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC42AE2450E00A8D2B0 /* UPCService.swift */; };
 		40CE0FF92AE2252100F93427 /* InventoryManagementAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FF82AE2252100F93427 /* InventoryManagementAppApp.swift */; };
 		40CE0FFB2AE2252100F93427 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FFA2AE2252100F93427 /* Persistence.swift */; };
 		40CE0FFE2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FFC2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld */; };
@@ -34,6 +35,7 @@
 		40634DBE2AE2319100A8D2B0 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		40634DC02AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockTake+CoreDataClass.swift"; sourceTree = "<group>"; };
 		40634DC12AE2320F00A8D2B0 /* StockTake+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockTake+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		40634DC42AE2450E00A8D2B0 /* UPCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCService.swift; sourceTree = "<group>"; };
 		40CE0FF52AE2252100F93427 /* InventoryManagementApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryManagementApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CE0FF82AE2252100F93427 /* InventoryManagementAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryManagementAppApp.swift; sourceTree = "<group>"; };
 		40CE0FFA2AE2252100F93427 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				40634DB82AE22F9100A8D2B0 /* Networking.swift */,
 				40634DBA2AE22F9E00A8D2B0 /* CoreDataManager.swift */,
+				40634DC42AE2450E00A8D2B0 /* UPCService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				40CE0FFE2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld in Sources */,
 				40634DC22AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift in Sources */,
 				40634DBB2AE22F9E00A8D2B0 /* CoreDataManager.swift in Sources */,
+				40634DC52AE2450E00A8D2B0 /* UPCService.swift in Sources */,
 				40634DB52AE22F4400A8D2B0 /* Item+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
