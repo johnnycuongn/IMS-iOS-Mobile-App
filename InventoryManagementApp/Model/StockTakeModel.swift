@@ -12,7 +12,7 @@ class StockTakeModel {
     
     enum StockTakeStatus: String {
         case pending = "Pending"
-        case accepted = "Accepted"
+        case complete = "Complete"
         case canceled = "Canceled"
         
         // Convert a StockTakeStatus enum to String
@@ -41,6 +41,15 @@ class StockTakeModel {
     }
  
     func updateStockTake(stockTake: StockTake, newStatus: StockTakeStatus) {
+        if let oldStatusString = stockTake.status,
+           let oldStatus = StockTakeStatus.from(string: oldStatusString),
+           oldStatus == .pending && newStatus == .complete {
+           
+            // Update item inventory
+            if let item = stockTake.item {
+                item.inventory = stockTake.inventory_to
+            }
+        }
         stockTake.status = newStatus.stringValue()
         stockTake.updated_at = Date()
         storage.saveContext()
