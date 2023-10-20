@@ -22,6 +22,7 @@ extension StockTake {
     @NSManaged public var stock_description: String?
     @NSManaged public var created_at: Date?
     @NSManaged public var updated_at: Date?
+    @NSManaged public var item: Item?
 
 }
 
