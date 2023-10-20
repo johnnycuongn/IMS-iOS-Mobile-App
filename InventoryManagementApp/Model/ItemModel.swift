@@ -15,7 +15,7 @@ class ItemModel {
     /**
      itemModel.addItem(name: "Item 1", inventory: 50, lowerLimit: 10, barcode: "1234567890")
      */
-    func addItem(name: String, inventory: Int32, lowerLimit: Int32, barcode: String) {
+    func addItem(name: String, inventory: Int32, lowerLimit: Int32, barcode: String) throws {
         let item = Item(context: storage.context)
         item.name = name
         item.inventory = inventory
@@ -24,7 +24,7 @@ class ItemModel {
         storage.saveContext()
     }
     
-    func updateItem(item: Item, newName: String) {
+    func updateItem(item: Item, newName: String) throws {
         item.name = newName
         storage.saveContext()
     }
@@ -35,7 +35,7 @@ class ItemModel {
          stockTakeModel.addStockTake(status: "Pending", inventoryFrom: 5, inventoryTo: 10, description: "Description", item: firstItem)
      }
      */
-    func getItems() -> [Item] {
+    func getItems() throws -> [Item]  {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         do {
             let items = try storage.context.fetch(fetchRequest)
@@ -46,7 +46,7 @@ class ItemModel {
         }
     }
     
-    func removeItem(item: Item) {
+    func removeItem(item: Item) throws {
         storage.context.delete(item)
         storage.saveContext()
     }
