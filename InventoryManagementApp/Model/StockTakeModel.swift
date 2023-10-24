@@ -27,7 +27,6 @@ enum StockTakeStatus: String {
 class StockTakeModel {
     
     static let shared: StockTakeModel = StockTakeModel()
-    let itemModel = ItemModel.shared
     
     let storage: CoreDataStorage = CoreDataStorage.shared
     
@@ -50,7 +49,7 @@ class StockTakeModel {
            
             // Update item inventory
             if let item = stockTake.item {
-                try itemModel.updateItem(item: item, newInventory: stockTake.inventory_to)
+                item.inventory = stockTake.inventory_to
             }
         }
         stockTake.status = newStatus.stringValue()

@@ -10,9 +10,8 @@ import CoreData
 
 class ItemModel {
     
-    static let shared = ItemModel()
-    let storage: CoreDataStorage = CoreDataStorage.shared
-    let stockTakeModel = StockTakeModel.shared
+    private var storage: CoreDataStorage = CoreDataStorage.shared
+    private var stockTakeModel = StockTakeModel.shared
     
     /**
      itemModel.addItem(name: "Item 1", inventory: 50, lowerLimit: 10, barcode: "1234567890")
@@ -42,7 +41,7 @@ class ItemModel {
         // Check if inventory has changed
         if oldInventory != newInventory {
             // Automatically create a stock take with status 'Complete'
-            try stockTakeModel.addStockTake(status: StockTakeStatus.complete, inventoryFrom: oldInventory, inventoryTo: newInventory, description: "Automatic Stock Take for \(item.name)", item: item)
+            stockTakeModel.addStockTake(status: StockTakeStatus.complete, inventoryFrom: oldInventory, inventoryTo: newInventory, description: "Automatic Stock Take for \(String(describing: item.name))", item: item)
         }
         
         checkInventoryAndNotify(item: item)
@@ -70,5 +69,13 @@ class ItemModel {
     func removeItem(item: Item) throws {
         storage.context.delete(item)
         storage.saveContext()
+    }
+    
+    func removeAllItems() throws {
+        let items = try getItems()  // Fetch all items
+        for item in items {
+            storage.context.delete(item)  // Delete each item
+        }
+        storage.saveContext()  // Save the context to commit the deletions
     }
 }
