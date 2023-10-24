@@ -19,8 +19,9 @@
 		40634DC52AE2450E00A8D2B0 /* UPCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC42AE2450E00A8D2B0 /* UPCService.swift */; };
 		40634DC92AE24AE200A8D2B0 /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC82AE24AE200A8D2B0 /* ItemListViewModel.swift */; };
 		40634DCB2AE24D8F00A8D2B0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DCA2AE24D8F00A8D2B0 /* NotificationService.swift */; };
+		40634DD02AE65A4C00A8D2B0 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DCF2AE65A4C00A8D2B0 /* HomePageView.swift */; };
+		40634DD42AE690A200A8D2B0 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DD32AE690A200A8D2B0 /* ItemListView.swift */; };
 		40CE0FF92AE2252100F93427 /* InventoryManagementAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FF82AE2252100F93427 /* InventoryManagementAppApp.swift */; };
-		40CE0FFB2AE2252100F93427 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FFA2AE2252100F93427 /* Persistence.swift */; };
 		40CE0FFE2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FFC2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld */; };
 		40CE10002AE2252100F93427 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FFF2AE2252100F93427 /* ContentView.swift */; };
 		40CE10022AE2252300F93427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CE10012AE2252300F93427 /* Assets.xcassets */; };
@@ -40,9 +41,10 @@
 		40634DC42AE2450E00A8D2B0 /* UPCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCService.swift; sourceTree = "<group>"; };
 		40634DC82AE24AE200A8D2B0 /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
 		40634DCA2AE24D8F00A8D2B0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		40634DCF2AE65A4C00A8D2B0 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		40634DD32AE690A200A8D2B0 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		40CE0FF52AE2252100F93427 /* InventoryManagementApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryManagementApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CE0FF82AE2252100F93427 /* InventoryManagementAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryManagementAppApp.swift; sourceTree = "<group>"; };
-		40CE0FFA2AE2252100F93427 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		40CE0FFD2AE2252100F93427 /* InventoryManagementApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InventoryManagementApp.xcdatamodel; sourceTree = "<group>"; };
 		40CE0FFF2AE2252100F93427 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		40CE10012AE2252300F93427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +98,8 @@
 		40634DC72AE2499B00A8D2B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				40634DCF2AE65A4C00A8D2B0 /* HomePageView.swift */,
+				40634DD32AE690A200A8D2B0 /* ItemListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,7 +129,6 @@
 				40634DB72AE22F8700A8D2B0 /* Services */,
 				40634DAE2AE22F3400A8D2B0 /* Model */,
 				40CE0FF82AE2252100F93427 /* InventoryManagementAppApp.swift */,
-				40CE0FFA2AE2252100F93427 /* Persistence.swift */,
 				40CE0FFF2AE2252100F93427 /* ContentView.swift */,
 				40CE10012AE2252300F93427 /* Assets.xcassets */,
 				40CE10032AE2252300F93427 /* InventoryManagementApp.entitlements */,
@@ -159,6 +162,8 @@
 			dependencies = (
 			);
 			name = InventoryManagementApp;
+			packageProductDependencies = (
+			);
 			productName = InventoryManagementApp;
 			productReference = 40CE0FF52AE2252100F93427 /* InventoryManagementApp.app */;
 			productType = "com.apple.product-type.application";
@@ -187,6 +192,8 @@
 				Base,
 			);
 			mainGroup = 40CE0FEC2AE2252100F93427;
+			packageReferences = (
+			);
 			productRefGroup = 40CE0FF62AE2252100F93427 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -217,11 +224,12 @@
 				40634DBD2AE2318700A8D2B0 /* StockTakeModel.swift in Sources */,
 				40634DC32AE2320F00A8D2B0 /* StockTake+CoreDataProperties.swift in Sources */,
 				40634DB62AE22F4400A8D2B0 /* Item+CoreDataProperties.swift in Sources */,
+				40634DD42AE690A200A8D2B0 /* ItemListView.swift in Sources */,
 				40634DB92AE22F9100A8D2B0 /* Networking.swift in Sources */,
+				40634DD02AE65A4C00A8D2B0 /* HomePageView.swift in Sources */,
 				40CE0FF92AE2252100F93427 /* InventoryManagementAppApp.swift in Sources */,
 				40634DC92AE24AE200A8D2B0 /* ItemListViewModel.swift in Sources */,
 				40634DBF2AE2319100A8D2B0 /* ItemModel.swift in Sources */,
-				40CE0FFB2AE2252100F93427 /* Persistence.swift in Sources */,
 				40CE10002AE2252100F93427 /* ContentView.swift in Sources */,
 				40CE0FFE2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld in Sources */,
 				40634DC22AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift in Sources */,

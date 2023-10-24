@@ -9,13 +9,72 @@ import SwiftUI
 import CoreData
 import UserNotifications
 
+enum CustomTab {
+    case home
+    case settings
+    case profile
+}
+
 struct ContentView: View {
     
+    @State private var selectedTab: CustomTab = .home
+    
     var body: some View {
-        Text("Hello World")
-            .onAppear {
-                requestNotificationPermission()
+        NavigationView {
+            GeometryReader { geometry in
+                VStack {
+                    // Content
+                    ZStack(alignment: .leading) {
+                        if selectedTab == .home {
+                            VStack {
+                                                            Text("Home Content")
+                                                        }
+                                                        .frame(width: .infinity, height: .infinity)
+                                                        .background(.red)
+                            
+                        } else if selectedTab == .settings {
+                            Text("Settings Content")
+                        } else if selectedTab == .profile {
+                            Text("Profile Content")
+                        }
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height - 50)
+                    
+                    // Custom Tab Bar
+                    HStack {
+                        Button(action: { selectedTab = .home }) {
+                            VStack {
+                                Image(systemName: "house.fill")
+                                Text("Home")
+                            }
+                        }
+                        .foregroundColor(selectedTab == .home ? .blue : .gray)
+                        
+                        Spacer()
+                        
+                        Button(action: { selectedTab = .settings }) {
+                            VStack {
+                                Image(systemName: "gearshape.fill")
+                                Text("Settings")
+                            }
+                        }
+                        .foregroundColor(selectedTab == .settings ? .blue : .gray)
+                        
+                        Spacer()
+                        
+                        Button(action: { selectedTab = .profile }) {
+                            VStack {
+                                Image(systemName: "person.fill")
+                                Text("Profile")
+                            }
+                        }
+                        .foregroundColor(selectedTab == .profile ? .blue : .gray)
+                    }
+                    .frame(height: 40)
+                    .padding()
+                }
             }
+        }
     }
     
     func requestNotificationPermission() {
