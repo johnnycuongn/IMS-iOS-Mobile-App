@@ -21,6 +21,7 @@
 		40634DCB2AE24D8F00A8D2B0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DCA2AE24D8F00A8D2B0 /* NotificationService.swift */; };
 		40634DD02AE65A4C00A8D2B0 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DCF2AE65A4C00A8D2B0 /* HomePageView.swift */; };
 		40634DD42AE690A200A8D2B0 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DD32AE690A200A8D2B0 /* ItemListView.swift */; };
+		40634DD62AE7580900A8D2B0 /* StockTakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DD52AE7580900A8D2B0 /* StockTakeViewModel.swift */; };
 		40CE0FF92AE2252100F93427 /* InventoryManagementAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FF82AE2252100F93427 /* InventoryManagementAppApp.swift */; };
 		40CE0FFE2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FFC2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld */; };
 		40CE10002AE2252100F93427 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FFF2AE2252100F93427 /* ContentView.swift */; };
@@ -43,6 +44,7 @@
 		40634DCA2AE24D8F00A8D2B0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		40634DCF2AE65A4C00A8D2B0 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		40634DD32AE690A200A8D2B0 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		40634DD52AE7580900A8D2B0 /* StockTakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTakeViewModel.swift; sourceTree = "<group>"; };
 		40CE0FF52AE2252100F93427 /* InventoryManagementApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryManagementApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CE0FF82AE2252100F93427 /* InventoryManagementAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryManagementAppApp.swift; sourceTree = "<group>"; };
 		40CE0FFD2AE2252100F93427 /* InventoryManagementApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InventoryManagementApp.xcdatamodel; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				40634DC82AE24AE200A8D2B0 /* ItemListViewModel.swift */,
+				40634DD52AE7580900A8D2B0 /* StockTakeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				40CE0FF92AE2252100F93427 /* InventoryManagementAppApp.swift in Sources */,
 				40634DC92AE24AE200A8D2B0 /* ItemListViewModel.swift in Sources */,
 				40634DBF2AE2319100A8D2B0 /* ItemModel.swift in Sources */,
+				40634DD62AE7580900A8D2B0 /* StockTakeViewModel.swift in Sources */,
 				40CE10002AE2252100F93427 /* ContentView.swift in Sources */,
 				40CE0FFE2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld in Sources */,
 				40634DC22AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift in Sources */,

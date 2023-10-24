@@ -8,9 +8,24 @@
 import SwiftUI
 
 struct HomePageView: View {
+    
+    private var itemViewModel: ItemListViewModel = ItemListViewModel()
+    private var stockTakeViewModel: StockTakeViewModel = StockTakeViewModel()
+    
     var body: some View {
-        VStack {
-            
+        NavigationView {
+            VStack {
+                NavigationLink(destination: ItemListView()) {
+                    Button("View Items") {
+                        print("View list")
+                    }
+                }
+                VStack {
+                    ScrollView {
+                        
+                    }
+                }
+            }
         }
     }
 }
