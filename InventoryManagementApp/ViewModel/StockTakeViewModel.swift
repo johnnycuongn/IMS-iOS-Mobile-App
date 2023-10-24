@@ -10,14 +10,9 @@ import CoreData
 
 class StockTakeViewModel: ObservableObject {
     @Published var stockTakes: [StockTake] = []
-    @Published var errorText: String?
+    @Published var errorText: String = ""
     
     private var stockTakeModel = StockTakeModel.shared
-    
-    init() {
-        // Initially fetch all stock takes
-        fetchStockTakes()
-    }
     
     func fetchStockTakes() {
         stockTakes = stockTakeModel.getStockTakes()
