@@ -16,7 +16,17 @@ struct ItemDetailsView: View {
     @State private var showInventoryUpdateView: Bool = false
     @State private var newInventory: Int32 = 0
     
+    @ObservedObject var stockViewModel = StockTakeViewModel()
+    @ObservedObject var itemViewModel = ItemListViewModel()
+    
+    let formatter = {
+        let result = DateFormatter()
+        result.dateFormat = "dd MMMM, yyyy HH:mm"
+
+        return result
+    }
     var body: some View {
+        
         ZStack {
             ScrollView {
                 VStack(alignment: .leading) {
@@ -48,8 +58,27 @@ struct ItemDetailsView: View {
                     }
                 }
                 .padding(16)
+                
+                Divider()
+                VStack {
+                    ForEach(stockViewModel.stockTakes, id: \.self) { item in
+                        VStack(alignment: .leading) {
+                            Text("Updated from \(item.inventory_from) to \(item.inventory_to)")
+                                .font(.headline)
+                            Text("Status: \(item.status ?? "N/A")")
+                            Text("Update: \(formatter().string(from: item.updated_at!))")
+                        }
+                        .frame(maxWidth: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+                        .padding()
+                        .background(Color(.systemGray5))
+                        .cornerRadius(8)
+                    }
+                }
             }
-            .onAppear(perform: fetchUPCDetails)
+            .onAppear(perform: {
+                fetchUPCDetails()
+                stockViewModel.fetchStockTakes(for: item)
+            })
             .navigationBarTitle("Item Details", displayMode: .inline)
             
             // Floating Action Button
@@ -99,6 +128,8 @@ struct ItemDetailsView: View {
                             Button("Update") {
                                 // Handle inventory update logic here
                                 // Update your CoreData or whichever storage you are using
+                                itemViewModel.updateItemInventory(item: self.item, newInventory: newInventory)
+                                stockViewModel.fetchStockTakes(for: item)
                                 self.showInventoryUpdateView.toggle()
                             }
                         }
