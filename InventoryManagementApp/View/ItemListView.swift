@@ -61,7 +61,7 @@ struct ItemDetailsView: View {
                         self.newInventory = self.item.inventory  // Initialize with the current inventory
                         self.showInventoryUpdateView.toggle()
                     }) {
-                        Image(systemName: "plus.circle.fill")
+                        Image(systemName: "pencil.circle.fill")
                             .resizable()
                             .frame(width: 60, height: 60)
                             .foregroundColor(Color.blue)

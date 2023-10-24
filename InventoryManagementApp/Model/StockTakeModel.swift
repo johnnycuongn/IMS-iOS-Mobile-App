@@ -94,4 +94,12 @@ class StockTakeModel {
             return []
         }
     }
+    
+    func removeAll() throws {
+        let items = try getStockTakes()  // Fetch all items
+        for item in items {
+            storage.context.delete(item)  // Delete each item
+        }
+        storage.saveContext()  // Save th
+    }
 }
