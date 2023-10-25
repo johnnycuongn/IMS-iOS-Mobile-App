@@ -26,12 +26,7 @@ struct ContentView: View {
                     // Content
                     ZStack(alignment: .leading) {
                         if selectedTab == .home {
-                            VStack {
-                                                            Text("Home Content")
-                                                        }
-                                                        .frame(width: .infinity, height: .infinity)
-                                                        .background(.red)
-                            
+                            HomePageView()
                         } else if selectedTab == .settings {
                             Text("Settings Content")
                         } else if selectedTab == .profile {

@@ -42,6 +42,23 @@ class ItemListViewModel: ObservableObject {
         }
     }
     
+    func updateItemInventory(item: Item, newInventory: Int32) {
+        do {
+            try self.itemModel.updateItem(item: item, newInventory: newInventory)
+        } catch {
+            self.errorText = "Failed to update item"
+        }
+    }
+    
+    func updateItemName(item: Item, newName: String) {
+        do {
+            try self.itemModel.updateItem(item: item, newName: newName, newInventory: item.inventory)
+        } catch {
+            self.errorText = "Failed to update item name"
+        }
+        
+    }
+    
     func removeItem(item: Item) {
         do {
             try itemModel.removeItem(item: item)

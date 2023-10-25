@@ -14,18 +14,22 @@ struct HomePageView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(alignment: .leading) {
                 NavigationLink(destination: ItemListView()) {
-                    Button("View Items") {
-                        print("View list")
-                    }
+                    Text("View Items")
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 40)
+                        .padding(.vertical, 10)
+                        .background(Color.red)
+                        .cornerRadius(10)
+                        .shadow(color: .gray, radius: 4, x: 0, y: 4) // Shadow
                 }
-                VStack {
-                    ScrollView {
-                        
-                    }
+                Divider()
+                VStack(alignment: .leading) {
+                    Text("Recent Stock Take").font(.title2)
+                    StockListView()
                 }
-            }
+            }.padding(10)
         }
     }
 }
