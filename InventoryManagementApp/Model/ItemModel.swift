@@ -44,7 +44,7 @@ class ItemModel {
             stockTakeModel.addStockTake(status: StockTakeStatus.complete, inventoryFrom: oldInventory, inventoryTo: newInventory, description: "Automatic Stock Take for \(String(describing: item.name))", item: item)
         }
         
-        checkInventoryAndNotify(item: item)
+        NotificationService.shared.checkInventoryAndNotify(item: item)
         
         storage.saveContext()
     }

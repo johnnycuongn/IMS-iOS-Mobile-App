@@ -75,7 +75,8 @@ struct AddItemView: View {
                 } else {
                     viewModel.addItem(name: name, inventory: inventory, lowerLimit: lowerLimit, barcode: barcode)
                 }
-            
+                
+                viewModel.fetchItems()
                 showModal = false
             })
         }
