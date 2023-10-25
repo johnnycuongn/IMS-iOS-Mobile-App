@@ -122,9 +122,18 @@ struct ItemDetailsView: View {
                             .padding(.horizontal, 24)
                         
                         HStack(spacing: 40) {
+
                             Button("Cancel") {
                                 self.showInventoryUpdateView.toggle()
                             }
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 30)
+                            .padding(.vertical, 10)
+                            .background(Color.gray)
+                            .cornerRadius(8)
+                            .shadow(radius: 3)
+                            
+                            
                             Button("Update") {
                                 // Handle inventory update logic here
                                 // Update your CoreData or whichever storage you are using
@@ -132,6 +141,12 @@ struct ItemDetailsView: View {
                                 stockViewModel.fetchStockTakes(for: item)
                                 self.showInventoryUpdateView.toggle()
                             }
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 30)
+                            .padding(.vertical, 10)
+                            .background(Color.blue)
+                            .cornerRadius(8)
+                            .shadow(radius: 3)
                         }
                         HStack{
                             Button(action: {
@@ -176,12 +191,12 @@ struct ItemDetailsView: View {
     }
 }
 
-struct ItemDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        let item = Item(context: CoreDataStorage.shared.context)
-        item.name = "Hello"
-        item.inventory = 0
-        item.barcode = "99555085273"
-        return ItemDetailsView(item: item)
-    }
-}
+//struct ItemDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let item = Item(context: CoreDataStorage.shared.context)
+//        item.name = "Hello"
+//        item.inventory = 0
+//        item.barcode = "99555085273"
+//        return ItemDetailsView(item: item)
+//    }
+//}
