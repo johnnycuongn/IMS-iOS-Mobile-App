@@ -5,7 +5,7 @@
         <attribute name="inventory" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="lower_limit" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="takes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StockTake" inverseName="item" inverseEntity="StockTake"/>
+        <relationship name="takes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StockTake" inverseName="item" inverseEntity="StockTake"/>
     </entity>
     <entity name="StockTake" representedClassName="StockTake" syncable="YES">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

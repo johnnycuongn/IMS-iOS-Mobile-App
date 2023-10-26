@@ -69,22 +69,15 @@ struct ContentView: View {
                     .padding()
                 }
             }
-        }
-    }
-    
-    func requestNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-            if granted {
-                print("Notification permission granted.")
-            } else if let error = error {
-                print("Notification permission error: \(error.localizedDescription)")
-            }
+        }.onAppear {
+            NotificationService.shared.checkAndRequestNotificationPermission()
+            ItemModel().scheduleDailyNotification()
         }
     }
     
 }
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
