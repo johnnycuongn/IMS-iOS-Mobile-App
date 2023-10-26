@@ -78,4 +78,29 @@ class ItemModel {
         }
         storage.saveContext()  // Save the context to commit the deletions
     }
+    
+    public func scheduleDailyNotification() {
+        do {
+            let items = try self.getItems()
+            var lowStockItems: [Item] = []
+            
+            for item in items {
+                if item.inventory < 5 {
+                    lowStockItems.append(item)
+                }
+            }
+            
+            let title = "Daily Inventory Notification"
+            var body = "Low Stock Items: "
+            
+            for item in lowStockItems {
+                body += "\(item.name ?? "N/A") (\(item.inventory)"
+            }
+            
+            NotificationService.shared.scheduleDailyNotification(notificationID: "daily_stocks", title: title, body: body)
+            
+        } catch {
+            print(error)
+        }
+    }
 }

@@ -48,6 +48,23 @@ class NotificationService: NSObject {
         }
     }
     
+    func scheduleDailyNotification(notificationID: String, title: String, body: String ) {
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = UNNotificationSound.default
+
+        var dateComponents = DateComponents()
+        dateComponents.hour = 9 // 9 AM
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+        let request = UNNotificationRequest(identifier: notificationID, content: content, trigger: trigger)
+        center.add(request)
+    }
+    
     func checkAndRequestNotificationPermission() {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             switch settings.authorizationStatus {

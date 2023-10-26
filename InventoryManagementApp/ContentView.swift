@@ -71,6 +71,7 @@ struct ContentView: View {
             }
         }.onAppear {
             NotificationService.shared.checkAndRequestNotificationPermission()
+            ItemModel().scheduleDailyNotification()
         }
     }
     
