@@ -63,7 +63,7 @@ class NotificationService: NSObject {
             case .ephemeral:
                 print("Notification allowed for schedule")
             @unknown default:
-                // Handle other potential future cases
+                // Handle other cases
                 print("Unknown notification permission status.")
             }
         }

@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ItemCardView: View {
     let item: Item
+    @ObservedObject var viewModel: ItemListViewModel
 
     var body: some View {
-        NavigationLink(destination: ItemDetailsView(item: item)) {
+        NavigationLink(destination: ItemDetailsView(item: item, itemViewModel: viewModel)) {
             VStack(alignment: .leading) {
                 Text(item.name ?? "Unknown")
                     .font(.headline)
@@ -76,7 +77,7 @@ struct AddItemView: View {
                     viewModel.addItem(name: name, inventory: inventory, lowerLimit: lowerLimit, barcode: barcode)
                 }
                 
-                viewModel.fetchItems()
+//                viewModel.fetchItems()
                 showModal = false
             })
         }
@@ -96,12 +97,13 @@ struct ItemListView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     ForEach(viewModel.items, id: \.self) { item in
-                        ItemCardView(item: item)
+                        ItemCardView(item: item, viewModel: viewModel)
                     }
                 }
                 .padding()
             }
             .onAppear {
+                print("ItemListView appear")
                 viewModel.fetchItems()
             }
             .alert(isPresented: Binding<Bool>.constant(viewModel.errorText != ""), content: {
