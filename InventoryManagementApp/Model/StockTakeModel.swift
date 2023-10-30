@@ -24,7 +24,7 @@ enum StockTakeStatus: String {
     }
 }
 
-class StockTakeModel {
+public class StockTakeModel {
     
     static let shared: StockTakeModel = StockTakeModel()
     
@@ -58,7 +58,7 @@ class StockTakeModel {
         
     }
     
-    func getStockTakes() -> [StockTake] {
+    public func getStockTakes() -> [StockTake] {
         let fetchRequest: NSFetchRequest<StockTake> = StockTake.fetchRequest()
         
         // Sort by updated_at
@@ -78,7 +78,7 @@ class StockTakeModel {
         storage.saveContext()
     }
     
-    func getStockTakes(for item: Item) -> [StockTake] {
+    public func getStockTakes(for item: Item) -> [StockTake] {
         let fetchRequest: NSFetchRequest<StockTake> = StockTake.fetchRequest()
         
         // Add a predicate to filter stock takes for the specific item

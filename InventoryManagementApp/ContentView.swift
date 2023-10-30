@@ -28,7 +28,7 @@ struct ContentView: View {
                         if selectedTab == .home {
                             HomePageView()
                         } else if selectedTab == .settings {
-                            Text("Settings Content")
+                            SettingsView()
                         } else if selectedTab == .profile {
                             Text("Profile Content")
                         }
