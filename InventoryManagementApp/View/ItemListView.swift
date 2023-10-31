@@ -39,7 +39,7 @@ struct AddItemView: View {
     @State private var barcode: String = ""
     
     var body: some View {
-        NavigationView {
+        NavigationView { // Navigation view for Item list
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) { // This Vstack displays the item card
                     Text("Item Name")
@@ -54,7 +54,7 @@ struct AddItemView: View {
                 .padding(.bottom, 20)
                 
                 VStack(alignment: .leading) {
-                    Text("Lower Limit")
+                    Text("Lower Limit") // disply text lower limit
                     TextField("Lower Limit", value: $lowerLimit, formatter: NumberFormatter())
                 }
                 .padding(.bottom, 20)
@@ -66,17 +66,18 @@ struct AddItemView: View {
                 .padding(.bottom, 20)
             }
             .padding()
-            .navigationBarTitle(itemToEdit == nil ? "Add Item" : "Edit Item", displayMode: .inline)
-            .navigationBarItems(leading: Button("Cancel") {
+            .navigationBarTitle(itemToEdit == nil ? "Add Item" : "Edit Item", displayMode: .inline) // This sets the title for the navigaiton bar , if the itemToEdit is been set to nil then the app stays in Add function. If changes are made it will switch to Edit function
+            
+            .navigationBarItems(leading: Button("Cancel") { // Adding a cancel button to the edit item function
                 showModal = false
-            }, trailing: Button("Save") {
+            }, trailing: Button("Save") { // save button to the edit item function
                 if let itemToEdit = itemToEdit {
                     //
                 } else {
                     viewModel.addItem(name: name, inventory: inventory, lowerLimit: lowerLimit, barcode: barcode)
                 }
                 
-//                viewModel.fetchItems()
+             viewModel.fetchItems()
                 showModal = false
             })
         }
