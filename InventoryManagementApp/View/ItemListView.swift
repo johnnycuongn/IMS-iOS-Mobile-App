@@ -128,25 +128,26 @@ struct ItemListView: View { // This is the view that displays the list of items
                     radius: 3,
                     x: 3,
                     y: 3)
-            .sheet(isPresented: $showModal) {
+            .sheet(isPresented: $showModal) { // This presents the overlay for the edit and add views
+                
                 AddItemView(showModal: $showModal, viewModel: viewModel)
             }
         }
     }
 }
 
-struct ItemListView_Previews: PreviewProvider {
+struct ItemListView_Previews: PreviewProvider { // This is the preview for the ItemListview
     static var previews: some View {
         let model = ItemModel()
-        let viewModel = ItemListViewModel()
+        let viewModel = ItemListViewModel() // removes items from the overlay
         do {
             try model.removeAllItems()
         } catch {
-            print(error)
+            print(error) // error handling
         }
         
-        viewModel.addItem(name: "2", inventory: 2, lowerLimit: 2, barcode: "99555085273")
-        return ItemListView(viewModel: viewModel)
+        viewModel.addItem(name: "2", inventory: 2, lowerLimit: 2, barcode: "99555085273") // sample item just for testing and preview
+        return ItemListView(viewModel: viewModel) // returns the example preview 
     }
 }
 
