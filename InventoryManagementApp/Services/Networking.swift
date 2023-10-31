@@ -8,16 +8,16 @@
 import Foundation
 
 enum HTTPError: Error {
-  case invalidResponse
-  case invalidStatusCode
-  case requestFailed(statusCode: Int, message: String)
+  case invalidResponse // sends an invalidResponse
+  case invalidStatusCode // If the status code cannot be recognised it will run the InvalidStatusCode
+  case requestFailed(statusCode: Int, message: String)// Creates a requestFailed which contains both the statuscode and a message to user/developer
 }
 
 enum HTTPStatusCode: Int {
-  case success = 200
-  case notFound = 404
+  case success = 200 // success status code requested
+  case notFound = 404 // status code could not be found
   
-  var isSuccessful: Bool {
+  var isSuccessful: Bool { // assess to see if the status code request was sucessful
     return (200..<300).contains(rawValue)
     }
   
@@ -25,7 +25,7 @@ enum HTTPStatusCode: Int {
     return HTTPURLResponse.localizedString(forStatusCode: rawValue)
     }
 }
-
+// This validates that URLResponse object
 func validate(_ response: URLResponse?) throws {
     
   guard let response = response as? HTTPURLResponse else {
@@ -42,18 +42,18 @@ func validate(_ response: URLResponse?) throws {
 }
 
 
-enum NetworkError: Error {
+enum NetworkError: Error { // This enum is there for other network errors that are outside other cases
     case failedToFetchData
 }
 
 protocol Networking {
-    @discardableResult func request(url: URL, completion: @escaping (Data?, Error?) -> Void) -> URLSessionTask
+    @discardableResult func request(url: URL, completion: @escaping (Data?, Error?) -> Void) -> URLSessionTask // This get request is to a URL that should return the URLSessionTask
 }
 
-final class NetworkManager: Networking {
-    private let session: URLSession
+final class NetworkManager: Networking { // Networking Protocol
+    private let session: URLSession // This instance is used to make the network requests
     
-    init(session: URLSession = URLSession.shared) {
+    init(session: URLSession = URLSession.shared) { // Initialiser that manages the URLSession object
         self.session = session
     }
     
@@ -64,7 +64,7 @@ final class NetworkManager: Networking {
                 print("Network Data \(String(describing: data))")
 //                print(String(data: data!, encoding: .utf8) ?? "Data could not be printed")
                 
-                try validate(response)
+                try validate(response) // Validates HTTP reponse
 
                 guard error == nil else {
                     print("Network Error: \(String(describing: error))")
@@ -72,7 +72,7 @@ final class NetworkManager: Networking {
                     return
                 }
                 
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { // Execution of completion handler
                     completion(data, nil)
                 }
                 
@@ -83,7 +83,7 @@ final class NetworkManager: Networking {
                 print("Network Validation Error: \(error)")
             }
         }
-        task.resume()
+        task.resume() // start network request
         
         return task
         
