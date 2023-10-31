@@ -7,33 +7,32 @@
 
 import SwiftUI
 
-struct ItemCardView: View {
-    let item: Item
-    @ObservedObject var viewModel: ItemListViewModel
+struct ItemCardView: View { // This creates a view for the item card
+    let item: Item // constant item which is the item to be displayed
+    @ObservedObject var viewModel: ItemListViewModel // Observed object that observes changes being made in this ItemListViewModel , it contains item data
 
     var body: some View {
         NavigationLink(destination: ItemDetailsView(item: item, itemViewModel: viewModel)) {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading) { // displays item name, if name is not known, it will print out unknown
                 Text(item.name ?? "Unknown")
                     .font(.headline)
-                Text("Inventory: \(item.inventory)")
-                Text("Lower Limit: \(item.lower_limit)")
-                Text("Barcode: \(item.barcode ?? "N/A")")
+                Text("Inventory: \(item.inventory)") // display of current inventory
+                Text("Lower Limit: \(item.lower_limit)") // display of lower limit of the item
+                Text("Barcode: \(item.barcode ?? "N/A")") // displays the barcode of the item
             }
-            .frame(maxWidth: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+            .frame(maxWidth: UIScreen.main.bounds.width * 0.9, alignment: .leading) // max width of the VStack - UI design presets
             .padding()
-            .background(Color(.systemGray5))
-            .cornerRadius(8)
-        }
+            .background(Color(.systemGray5)) // background color set to gray
+            .cornerRadius(8)// how round the card  corners are - UI design elements here         }
     }
 }
-
+// This is the view that pop's up for  when users want to edit an item
 struct AddItemView: View {
     @Binding var showModal: Bool
     @ObservedObject var viewModel: ItemListViewModel
     
-    var itemToEdit: Item?
-    
+    var itemToEdit: Item? // If an item's info has been edited it will be stored in this variable
+    // The following are state variable to capture user input
     @State private var name: String = ""
     @State private var inventory: Int32 = 0
     @State private var lowerLimit: Int32 = 0
@@ -42,14 +41,14 @@ struct AddItemView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading) { // This Vstack displays the item card
                     Text("Item Name")
                     TextField("Item Name", text: $name)
                 }
                 .padding(.bottom, 20)
                 
                 VStack(alignment: .leading) {
-                    Text("Inventory")
+                    Text("Inventory") // item inventory
                     TextField("Inventory", value: $inventory, formatter: NumberFormatter())
                 }
                 .padding(.bottom, 20)
