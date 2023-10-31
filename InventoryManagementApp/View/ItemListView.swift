@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ItemCardView: View {
     let item: Item
+    @ObservedObject var viewModel: ItemListViewModel
 
     var body: some View {
-        NavigationLink(destination: ItemDetailsView(item: item)) {
+        NavigationLink(destination: ItemDetailsView(item: item, itemViewModel: viewModel)) {
             VStack(alignment: .leading) {
                 Text(item.name ?? "Unknown")
                     .font(.headline)
@@ -75,7 +76,8 @@ struct AddItemView: View {
                 } else {
                     viewModel.addItem(name: name, inventory: inventory, lowerLimit: lowerLimit, barcode: barcode)
                 }
-            
+                
+//                viewModel.fetchItems()
                 showModal = false
             })
         }
@@ -91,42 +93,41 @@ struct ItemListView: View {
         
 
     var body: some View {
-        NavigationView {
-            ZStack(alignment: .bottomTrailing) {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 16) {
-                        ForEach(viewModel.items, id: \.self) { item in
-                            ItemCardView(item: item)
-                        }
+        ZStack(alignment: .bottomTrailing) {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    ForEach(viewModel.items, id: \.self) { item in
+                        ItemCardView(item: item, viewModel: viewModel)
                     }
-                    .padding()
                 }
-                .onAppear {
-                    viewModel.fetchItems()
-                }
-                .alert(isPresented: Binding<Bool>.constant(viewModel.errorText != ""), content: {
-                    Alert(title: Text("Error"), message: Text(viewModel.errorText ?? "Unknown error"), dismissButton: .default(Text("OK")))
-                })
-                
-                Button(action: {
-                    showModal.toggle()
-                }) {
-                    Text("+")
-                        .font(.system(.largeTitle))
-                        .frame(width: 67, height: 60)
-                        .foregroundColor(Color.white)
-                        .padding(.bottom, 7)
-                }
-                .background(Color.blue)
-                .cornerRadius(38.5)
                 .padding()
-                .shadow(color: Color.black.opacity(0.3),
-                        radius: 3,
-                        x: 3,
-                        y: 3)
-                .sheet(isPresented: $showModal) {
-                    AddItemView(showModal: $showModal, viewModel: viewModel)
-                }
+            }
+            .onAppear {
+                print("ItemListView appear")
+                viewModel.fetchItems()
+            }
+            .alert(isPresented: Binding<Bool>.constant(viewModel.errorText != ""), content: {
+                Alert(title: Text("Error"), message: Text(viewModel.errorText ?? "Unknown error"), dismissButton: .default(Text("OK")))
+            })
+            
+            Button(action: {
+                showModal.toggle()
+            }) {
+                Text("+")
+                    .font(.system(.largeTitle))
+                    .frame(width: 67, height: 60)
+                    .foregroundColor(Color.white)
+                    .padding(.bottom, 7)
+            }
+            .background(Color.blue)
+            .cornerRadius(38.5)
+            .padding()
+            .shadow(color: Color.black.opacity(0.3),
+                    radius: 3,
+                    x: 3,
+                    y: 3)
+            .sheet(isPresented: $showModal) {
+                AddItemView(showModal: $showModal, viewModel: viewModel)
             }
         }
     }
@@ -146,3 +147,4 @@ struct ItemListView_Previews: PreviewProvider {
         return ItemListView(viewModel: viewModel)
     }
 }
+
