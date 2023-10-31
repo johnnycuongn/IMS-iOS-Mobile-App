@@ -23,7 +23,9 @@ struct ItemCardView: View { // This creates a view for the item card
             .frame(maxWidth: UIScreen.main.bounds.width * 0.9, alignment: .leading) // max width of the VStack - UI design presets
             .padding()
             .background(Color(.systemGray5)) // background color set to gray
-            .cornerRadius(8)// how round the card  corners are - UI design elements here         }
+            .cornerRadius(8)// how round the card  corners are - UI design elements here
+            
+        }
     }
 }
 // This is the view that pop's up for  when users want to edit an item
@@ -77,7 +79,7 @@ struct AddItemView: View {
                     viewModel.addItem(name: name, inventory: inventory, lowerLimit: lowerLimit, barcode: barcode)
                 }
                 
-             viewModel.fetchItems()
+  //           viewModel.fetchItems()
                 showModal = false
             })
         }
