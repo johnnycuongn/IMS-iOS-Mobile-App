@@ -9,37 +9,37 @@ import Foundation
 
 import CoreData
 
-final class CoreDataStorage {
-    static var shared = CoreDataStorage()
+final class CoreDataStorage { // This manages Core Data operations
+    static var shared = CoreDataStorage() // is a shared instance
     
-    private init() {}
+    private init() {} // This is here to make sure there is only one instance of the class
     
     
     // MARK: - Core Data stack
     
-    private lazy var persistentContainer: NSPersistentContainer = {
-        print(NSPersistentContainer.defaultDirectoryURL())
+    private lazy var persistentContainer: NSPersistentContainer = { // Initialises the NSP
+        print(NSPersistentContainer.defaultDirectoryURL()) // prints the default URL for Core data
         
-        let container = NSPersistentContainer(name: "InventoryManagementApp")
+        let container = NSPersistentContainer(name: "InventoryManagementApp") // THis is the container we created for the inventory management app
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
+            if let error = error as NSError? { // error handling here :)
                 assertionFailure("CoreDataStorage: Unresolved error \(error), \(error.userInfo)")
             }
         })
         return container
     }()
     
-    lazy var context = persistentContainer.viewContext
+    lazy var context = persistentContainer.viewContext // Gives access to the main managed object context
     
     // MARK: - Core Data Saving support
     
-    func saveContext () {
+    func saveContext () { // save function of the context to a persistent container
         let context = persistentContainer.viewContext
-        if context.hasChanges {
+        if context.hasChanges { // good error handling method , we are checking to ensure that there are event any changes before saving it to the container
             do {
-                try context.save()
+                try context.save() // save context
             } catch {
-                assertionFailure("CoreDataStorage Unresolved error \(error), \((error as NSError).userInfo)")
+                assertionFailure("CoreDataStorage Unresolved error \(error), \((error as NSError).userInfo)") // error handling, see if there are any error logs 
             }
         }
     }
