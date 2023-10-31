@@ -5,7 +5,7 @@
 //  Created by Johnny on 24/10/2023.
 //
 
-import SwiftUI
+import SwiftUI// teat iy
 import CoreData
 
 class StockTakeViewModel: ObservableObject {
