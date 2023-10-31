@@ -7,8 +7,8 @@
 import SwiftUI
 import WidgetKit
 
-struct SettingsView: View {
-    @State private var isWidgetAdded = false
+struct SettingsView: View { // settings view can be seen in homepahe
+    @State private var isWidgetAdded = false // This checks to see if the widget has been added , it is sent to false
     
     var body: some View {
         NavigationView {
@@ -18,7 +18,7 @@ struct SettingsView: View {
         }
     }
 }
-struct SettingsView_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider { //Preview of Settings view
     static var previews: some View {
         SettingsView()
     }
