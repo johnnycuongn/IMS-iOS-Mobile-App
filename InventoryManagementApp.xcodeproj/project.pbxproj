@@ -425,7 +425,7 @@
 				CODE_SIGN_ENTITLEMENTS = StockWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 78RVQ7KNVP;
+				DEVELOPMENT_TEAM = X2YTU94F9H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StockWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = StockWidget;
@@ -437,13 +437,13 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = johnny.InventoryManagementApp.StockWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = Isabelle.InventoryManagementApp.StockWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -455,7 +455,7 @@
 				CODE_SIGN_ENTITLEMENTS = StockWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 78RVQ7KNVP;
+				DEVELOPMENT_TEAM = X2YTU94F9H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StockWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = StockWidget;
@@ -467,13 +467,13 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = johnny.InventoryManagementApp.StockWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = Isabelle.InventoryManagementApp.StockWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -598,7 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InventoryManagementApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 78RVQ7KNVP;
+				DEVELOPMENT_TEAM = X2YTU94F9H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InventoryManagementApp/Info.plist;
@@ -617,13 +617,15 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = johnny.InventoryManagementApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Isabelle.InventoryManagementApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -637,7 +639,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InventoryManagementApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 78RVQ7KNVP;
+				DEVELOPMENT_TEAM = X2YTU94F9H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InventoryManagementApp/Info.plist;
@@ -656,13 +658,15 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = johnny.InventoryManagementApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Isabelle.InventoryManagementApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
