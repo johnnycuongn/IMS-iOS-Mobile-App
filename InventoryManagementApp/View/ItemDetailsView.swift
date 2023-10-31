@@ -13,16 +13,16 @@ struct ItemDetailsView: View {
     
     var item: Item
     @State private var upcDetails: UPCResponse.Item?
-    @State private var error: Error?
-    @State private var isLoading: Bool = false
+    @State private var error: Error? // error handling, stores error messages
+    @State private var isLoading: Bool = false // checks to see if data is being loaded
 
-    @State private var showInventoryUpdateView: Bool = false
-    @State private var newInventory: Int32 = 0
+    @State private var showInventoryUpdateView: Bool = false // shows any inventory updates
+    @State private var newInventory: Int32 = 0 // Displays the updared inventory value
     
-    @ObservedObject var stockViewModel = StockTakeViewModel()
-    @ObservedObject var itemViewModel: ItemListViewModel
+    @ObservedObject var stockViewModel = StockTakeViewModel() // manages the stock
+    @ObservedObject var itemViewModel: ItemListViewModel // manages the items
     
-    let formatter = {
+    let formatter = { // this formats to display date and time
         let result = DateFormatter()
         result.dateFormat = "dd MMMM, yyyy HH:mm"
 
@@ -34,13 +34,13 @@ struct ItemDetailsView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     if isLoading {
-                        ProgressView("Loading...")
+                        ProgressView("Loading...") // user feedback, that app is loading
                     } else {
-                        Text("Item Details")
+                        Text("Item Details") // displays item information
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .padding(.bottom, 20)
-                        
+                        // this is what displays the individual info of each item
                         detailSection(title: "Item Name:", detail: "\(item.name ?? "N/A")")
                         detailSection(title: "Inventory:", detail: "\(item.inventory)")
                         detailSection(title: "Lower Limit:", detail: "\(item.lower_limit)")
@@ -176,7 +176,7 @@ struct ItemDetailsView: View {
         }
     }
     
-    func detailSection(title: String, detail: String) -> some View {
+    func detailSection(title: String, detail: String) -> some View { // This creates sections to separate title and paragraph text 
         VStack(alignment: .leading) {
             Text(title)
                 .fontWeight(.bold)
@@ -186,7 +186,7 @@ struct ItemDetailsView: View {
         .padding(.bottom, 10)
     }
     
-    func fetchUPCDetails() {
+    func fetchUPCDetails() { // This fetches UPC details for the items
         isLoading = true
         let service = UPCService()
         service.fetchItemByUPC(item.barcode ?? "") { details, error in
