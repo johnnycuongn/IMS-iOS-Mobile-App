@@ -12,7 +12,7 @@ struct ItemDetailsView: View {
     @State private var upcDetails: UPCResponse.Item?
     @State private var error: Error?
     @State private var isLoading: Bool = false
-    
+
     @State private var showInventoryUpdateView: Bool = false
     @State private var newInventory: Int32 = 0
     

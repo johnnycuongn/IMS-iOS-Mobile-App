@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct HomePageView: View {
+struct HomePageView: View { // This is the main homepage of the Inventory Management app
     
-    private var itemViewModel: ItemListViewModel = ItemListViewModel()
+    
+    private var itemViewModel: ItemListViewModel = ItemListViewModel() // This is the view model that contains the list of items
+    
     private var stockTakeViewModel: StockTakeViewModel = StockTakeViewModel()
     
     var body: some View {
@@ -39,3 +41,4 @@ struct HomePageView_Previews: PreviewProvider {
         HomePageView()
     }
 }
+//tyjhh
