@@ -74,54 +74,54 @@ struct AddItemView: View {
                 showModal = false
             }, trailing: Button("Save") { // save button to the edit item function
                 if let itemToEdit = itemToEdit {
-                    //
+                    // update the edits made to the item
                 } else {
-                    viewModel.addItem(name: name, inventory: inventory, lowerLimit: lowerLimit, barcode: barcode)
+                    viewModel.addItem(name: name, inventory: inventory, lowerLimit: lowerLimit, barcode: barcode) // Add the new item
                 }
                 
   //           viewModel.fetchItems()
-                showModal = false
+                showModal = false // dismisses the modal
             })
         }
 
     }
 }
 
-struct ItemListView: View {
+struct ItemListView: View { // This is the view that displays the list of items
     
-    @ObservedObject var viewModel: ItemListViewModel = ItemListViewModel()
+    @ObservedObject var viewModel: ItemListViewModel = ItemListViewModel() // This controls the fetch functions of the item
     
-    @State private var showModal = false
+    @State private var showModal = false // We use a state variable so we can chose when to show and hide the edit and add overlays
         
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            ScrollView {
+            ScrollView { // Added scrollable view so users can scroll through item list
                 VStack(alignment: .leading, spacing: 16) {
-                    ForEach(viewModel.items, id: \.self) { item in
+                    ForEach(viewModel.items, id: \.self) { item in // displays all items through loop
                         ItemCardView(item: item, viewModel: viewModel)
                     }
                 }
                 .padding()
             }
-            .onAppear {
+            .onAppear { // Items are omly fetched when the view is appearing /on
                 print("ItemListView appear")
                 viewModel.fetchItems()
             }
-            .alert(isPresented: Binding<Bool>.constant(viewModel.errorText != ""), content: {
+            .alert(isPresented: Binding<Bool>.constant(viewModel.errorText != ""), content: { // alert function that dislay user errors
                 Alert(title: Text("Error"), message: Text(viewModel.errorText ?? "Unknown error"), dismissButton: .default(Text("OK")))
             })
             
             Button(action: {
                 showModal.toggle()
             }) {
-                Text("+")
-                    .font(.system(.largeTitle))
+                Text("+") // Add new item button
+                    .font(.system(.largeTitle)) // UI style
                     .frame(width: 67, height: 60)
                     .foregroundColor(Color.white)
                     .padding(.bottom, 7)
             }
-            .background(Color.blue)
+            .background(Color.blue) // UI style
             .cornerRadius(38.5)
             .padding()
             .shadow(color: Color.black.opacity(0.3),
