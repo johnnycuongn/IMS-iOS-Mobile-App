@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 @main
 struct InventoryManagementAppApp: App {
@@ -16,3 +17,4 @@ struct InventoryManagementAppApp: App {
         }
     }
 }
+
