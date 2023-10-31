@@ -44,7 +44,7 @@ class ItemModel {
             stockTakeModel.addStockTake(status: StockTakeStatus.complete, inventoryFrom: oldInventory, inventoryTo: newInventory, description: "Automatic Stock Take for \(String(describing: item.name))", item: item)
         }
         
-        NotificationService.shared.checkInventoryAndNotify(item: item)
+        checkInventoryAndNotify(item: item)
         
         storage.saveContext()
     }
@@ -77,30 +77,5 @@ class ItemModel {
             storage.context.delete(item)  // Delete each item
         }
         storage.saveContext()  // Save the context to commit the deletions
-    }
-    
-    public func scheduleDailyNotification() {
-        do {
-            let items = try self.getItems()
-            var lowStockItems: [Item] = []
-            
-            for item in items {
-                if item.inventory < 5 {
-                    lowStockItems.append(item)
-                }
-            }
-            
-            let title = "Daily Inventory Notification"
-            var body = "Low Stock Items: "
-            
-            for item in lowStockItems {
-                body += "\(item.name ?? "N/A") (\(item.inventory)"
-            }
-            
-            NotificationService.shared.scheduleDailyNotification(notificationID: "daily_stocks", title: title, body: body)
-            
-        } catch {
-            print(error)
-        }
     }
 }

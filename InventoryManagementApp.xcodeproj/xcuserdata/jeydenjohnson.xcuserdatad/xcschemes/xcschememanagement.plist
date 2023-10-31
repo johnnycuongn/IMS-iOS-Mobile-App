@@ -6,8 +6,40 @@
 	<dict>
 		<key>InventoryManagementApp.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>SharedFramework copy.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>StockWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>39B025792AEE61670081903A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39B025982AEE63C40081903A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>40CE0FF42AE2252100F93427</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

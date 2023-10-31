@@ -16,7 +16,6 @@ class ItemListViewModel: ObservableObject {
     
     func fetchItems() {
         do {
-            self.items = []
             self.items = try itemModel.getItems()
             print("ViewModel: Get items \(items)")
         } catch {
@@ -46,7 +45,6 @@ class ItemListViewModel: ObservableObject {
     func updateItemInventory(item: Item, newInventory: Int32) {
         do {
             try self.itemModel.updateItem(item: item, newInventory: newInventory)
-            fetchItems()
         } catch {
             self.errorText = "Failed to update item"
         }
@@ -55,7 +53,6 @@ class ItemListViewModel: ObservableObject {
     func updateItemName(item: Item, newName: String) {
         do {
             try self.itemModel.updateItem(item: item, newName: newName, newInventory: item.inventory)
-            fetchItems()
         } catch {
             self.errorText = "Failed to update item name"
         }

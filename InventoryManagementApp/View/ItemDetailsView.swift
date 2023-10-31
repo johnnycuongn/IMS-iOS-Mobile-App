@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct ItemDetailsView: View {
-    
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     var item: Item
     @State private var upcDetails: UPCResponse.Item?
     @State private var error: Error?
@@ -20,7 +17,7 @@ struct ItemDetailsView: View {
     @State private var newInventory: Int32 = 0
     
     @ObservedObject var stockViewModel = StockTakeViewModel()
-    @ObservedObject var itemViewModel: ItemListViewModel
+    @ObservedObject var itemViewModel = ItemListViewModel()
     
     let formatter = {
         let result = DateFormatter()
@@ -69,7 +66,7 @@ struct ItemDetailsView: View {
                             Text("Updated from \(item.inventory_from) to \(item.inventory_to)")
                                 .font(.headline)
                             Text("Status: \(item.status ?? "N/A")")
-                            Text("Update: \(formatter().string(from: item.updated_at ?? Date()))")
+                            Text("Update: \(formatter().string(from: item.updated_at!))")
                         }
                         .frame(maxWidth: UIScreen.main.bounds.width * 0.9, alignment: .leading)
                         .padding()
@@ -154,9 +151,6 @@ struct ItemDetailsView: View {
                         HStack{
                             Button(action: {
                                 // Your delete action here
-                                itemViewModel.removeItem(item: self.item)
-                                self.showInventoryUpdateView.toggle()
-                                self.presentationMode.wrappedValue.dismiss()
                             }) {
                                 Text("Delete")
                                     .foregroundColor(.white)

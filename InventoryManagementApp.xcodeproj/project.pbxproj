@@ -7,11 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3901FB562AEFD0F7003A87BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CE10012AE2252300F93427 /* Assets.xcassets */; };
+		3901FB632AEFD98C003A87BB /* InventoryManagementApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FFC2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld */; };
+		3901FB642AEFE265003A87BB /* StockTakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DBC2AE2318700A8D2B0 /* StockTakeModel.swift */; };
+		3901FB652AEFE268003A87BB /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DB22AE22F4400A8D2B0 /* Item+CoreDataProperties.swift */; };
+		3901FB662AEFE26B003A87BB /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DB12AE22F4400A8D2B0 /* Item+CoreDataClass.swift */; };
+		3901FB672AEFE26E003A87BB /* StockTake+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC12AE2320F00A8D2B0 /* StockTake+CoreDataProperties.swift */; };
+		3901FB682AEFE271003A87BB /* StockTake+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC02AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift */; };
+		3901FB692AEFE27F003A87BB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DBA2AE22F9E00A8D2B0 /* CoreDataManager.swift */; };
+		392F68742AE8B93D008266AF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F68732AE8B93D008266AF /* SettingsView.swift */; };
+		39B0257D2AEE61670081903A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B0257C2AEE61670081903A /* WidgetKit.framework */; };
+		39B0257F2AEE61670081903A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B0257E2AEE61670081903A /* SwiftUI.framework */; };
+		39B025822AEE61670081903A /* StockWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B025812AEE61670081903A /* StockWidgetBundle.swift */; };
+		39B025842AEE61670081903A /* StockWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B025832AEE61670081903A /* StockWidgetLiveActivity.swift */; };
+		39B025862AEE61670081903A /* StockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B025852AEE61670081903A /* StockWidget.swift */; };
+		39B025892AEE61680081903A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39B025882AEE61680081903A /* Assets.xcassets */; };
+		39B0258B2AEE61680081903A /* StockWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 39B025872AEE61670081903A /* StockWidget.intentdefinition */; };
+		39B0258C2AEE61680081903A /* StockWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 39B025872AEE61670081903A /* StockWidget.intentdefinition */; };
+		39B0258F2AEE61680081903A /* StockWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 39B0257A2AEE61670081903A /* StockWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		40634D9C2AE22C3D00A8D2B0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 40634D9B2AE22C3D00A8D2B0 /* README.md */; };
+		40634DB52AE22F4400A8D2B0 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DB12AE22F4400A8D2B0 /* Item+CoreDataClass.swift */; };
+		40634DB62AE22F4400A8D2B0 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DB22AE22F4400A8D2B0 /* Item+CoreDataProperties.swift */; };
 		40634DB92AE22F9100A8D2B0 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DB82AE22F9100A8D2B0 /* Networking.swift */; };
 		40634DBB2AE22F9E00A8D2B0 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DBA2AE22F9E00A8D2B0 /* CoreDataManager.swift */; };
 		40634DBD2AE2318700A8D2B0 /* StockTakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DBC2AE2318700A8D2B0 /* StockTakeModel.swift */; };
 		40634DBF2AE2319100A8D2B0 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DBE2AE2319100A8D2B0 /* ItemModel.swift */; };
+		40634DC22AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC02AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift */; };
+		40634DC32AE2320F00A8D2B0 /* StockTake+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC12AE2320F00A8D2B0 /* StockTake+CoreDataProperties.swift */; };
 		40634DC52AE2450E00A8D2B0 /* UPCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC42AE2450E00A8D2B0 /* UPCService.swift */; };
 		40634DC92AE24AE200A8D2B0 /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DC82AE24AE200A8D2B0 /* ItemListViewModel.swift */; };
 		40634DCB2AE24D8F00A8D2B0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40634DCA2AE24D8F00A8D2B0 /* NotificationService.swift */; };
@@ -25,18 +47,64 @@
 		40CE10002AE2252100F93427 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FFF2AE2252100F93427 /* ContentView.swift */; };
 		40CE10022AE2252300F93427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CE10012AE2252300F93427 /* Assets.xcassets */; };
 		40CE10062AE2252300F93427 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CE10052AE2252300F93427 /* Preview Assets.xcassets */; };
-		40F7519E2AEA87CD00CA1705 /* StockTake+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F7519A2AEA87CD00CA1705 /* StockTake+CoreDataClass.swift */; };
-		40F7519F2AEA87CD00CA1705 /* StockTake+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F7519B2AEA87CD00CA1705 /* StockTake+CoreDataProperties.swift */; };
-		40F751A02AEA87CD00CA1705 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F7519C2AEA87CD00CA1705 /* Item+CoreDataClass.swift */; };
-		40F751A12AEA87CD00CA1705 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F7519D2AEA87CD00CA1705 /* Item+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		39B0258D2AEE61680081903A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40CE0FED2AE2252100F93427 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39B025792AEE61670081903A;
+			remoteInfo = StockWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		39B025902AEE61680081903A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				39B0258F2AEE61680081903A /* StockWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39B025B32AEE63C40081903A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		392F68732AE8B93D008266AF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		392F68752AE8CCDF008266AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		39B0257A2AEE61670081903A /* StockWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StockWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		39B0257C2AEE61670081903A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		39B0257E2AEE61670081903A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		39B025812AEE61670081903A /* StockWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWidgetBundle.swift; sourceTree = "<group>"; };
+		39B025832AEE61670081903A /* StockWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		39B025852AEE61670081903A /* StockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWidget.swift; sourceTree = "<group>"; };
+		39B025872AEE61670081903A /* StockWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = StockWidget.intentdefinition; sourceTree = "<group>"; };
+		39B025882AEE61680081903A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39B0258A2AEE61680081903A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39F41CB42AF0F81500DB8E2E /* StockWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StockWidgetExtension.entitlements; sourceTree = "<group>"; };
 		40634D9B2AE22C3D00A8D2B0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		40634DB12AE22F4400A8D2B0 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		40634DB22AE22F4400A8D2B0 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		40634DB82AE22F9100A8D2B0 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		40634DBA2AE22F9E00A8D2B0 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		40634DBC2AE2318700A8D2B0 /* StockTakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTakeModel.swift; sourceTree = "<group>"; };
 		40634DBE2AE2319100A8D2B0 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		40634DC02AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockTake+CoreDataClass.swift"; sourceTree = "<group>"; };
+		40634DC12AE2320F00A8D2B0 /* StockTake+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockTake+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		40634DC42AE2450E00A8D2B0 /* UPCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCService.swift; sourceTree = "<group>"; };
 		40634DC82AE24AE200A8D2B0 /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
 		40634DCA2AE24D8F00A8D2B0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -52,13 +120,18 @@
 		40CE10012AE2252300F93427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40CE10032AE2252300F93427 /* InventoryManagementApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InventoryManagementApp.entitlements; sourceTree = "<group>"; };
 		40CE10052AE2252300F93427 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		40F7519A2AEA87CD00CA1705 /* StockTake+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockTake+CoreDataClass.swift"; sourceTree = "<group>"; };
-		40F7519B2AEA87CD00CA1705 /* StockTake+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockTake+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		40F7519C2AEA87CD00CA1705 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		40F7519D2AEA87CD00CA1705 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		39B025772AEE61670081903A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39B0257F2AEE61670081903A /* SwiftUI.framework in Frameworks */,
+				39B0257D2AEE61670081903A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40CE0FF22AE2252100F93427 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,13 +142,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39B0257B2AEE61670081903A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39B0257C2AEE61670081903A /* WidgetKit.framework */,
+				39B0257E2AEE61670081903A /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39B025802AEE61670081903A /* StockWidget */ = {
+			isa = PBXGroup;
+			children = (
+				39B025812AEE61670081903A /* StockWidgetBundle.swift */,
+				39B025832AEE61670081903A /* StockWidgetLiveActivity.swift */,
+				39B025852AEE61670081903A /* StockWidget.swift */,
+				39B025872AEE61670081903A /* StockWidget.intentdefinition */,
+				39B025882AEE61680081903A /* Assets.xcassets */,
+				39B0258A2AEE61680081903A /* Info.plist */,
+			);
+			path = StockWidget;
+			sourceTree = "<group>";
+		};
 		40634DAE2AE22F3400A8D2B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				40F7519A2AEA87CD00CA1705 /* StockTake+CoreDataClass.swift */,
-				40F7519B2AEA87CD00CA1705 /* StockTake+CoreDataProperties.swift */,
-				40F7519C2AEA87CD00CA1705 /* Item+CoreDataClass.swift */,
-				40F7519D2AEA87CD00CA1705 /* Item+CoreDataProperties.swift */,
+				40634DC02AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift */,
+				40634DC12AE2320F00A8D2B0 /* StockTake+CoreDataProperties.swift */,
+				40634DB12AE22F4400A8D2B0 /* Item+CoreDataClass.swift */,
+				40634DB22AE22F4400A8D2B0 /* Item+CoreDataProperties.swift */,
 				40634DBC2AE2318700A8D2B0 /* StockTakeModel.swift */,
 				40634DBE2AE2319100A8D2B0 /* ItemModel.swift */,
 			);
@@ -109,6 +204,7 @@
 				40634DD32AE690A200A8D2B0 /* ItemListView.swift */,
 				40634DD92AE7661D00A8D2B0 /* StockListView.swift */,
 				40634DDB2AE7891E00A8D2B0 /* ItemDetailsView.swift */,
+				392F68732AE8B93D008266AF /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,8 +212,11 @@
 		40CE0FEC2AE2252100F93427 = {
 			isa = PBXGroup;
 			children = (
+				39F41CB42AF0F81500DB8E2E /* StockWidgetExtension.entitlements */,
 				40634D9B2AE22C3D00A8D2B0 /* README.md */,
 				40CE0FF72AE2252100F93427 /* InventoryManagementApp */,
+				39B025802AEE61670081903A /* StockWidget */,
+				39B0257B2AEE61670081903A /* Frameworks */,
 				40CE0FF62AE2252100F93427 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				40CE0FF52AE2252100F93427 /* InventoryManagementApp.app */,
+				39B0257A2AEE61670081903A /* StockWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +233,7 @@
 		40CE0FF72AE2252100F93427 /* InventoryManagementApp */ = {
 			isa = PBXGroup;
 			children = (
+				392F68752AE8CCDF008266AF /* Info.plist */,
 				40634DC72AE2499B00A8D2B0 /* View */,
 				40634DC62AE2499400A8D2B0 /* ViewModel */,
 				40634DB72AE22F8700A8D2B0 /* Services */,
@@ -158,6 +259,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		39B025792AEE61670081903A /* StockWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39B025932AEE61680081903A /* Build configuration list for PBXNativeTarget "StockWidgetExtension" */;
+			buildPhases = (
+				39B025762AEE61670081903A /* Sources */,
+				39B025772AEE61670081903A /* Frameworks */,
+				39B025782AEE61670081903A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StockWidgetExtension;
+			productName = StockWidgetExtension;
+			productReference = 39B0257A2AEE61670081903A /* StockWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		40CE0FF42AE2252100F93427 /* InventoryManagementApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40CE10092AE2252300F93427 /* Build configuration list for PBXNativeTarget "InventoryManagementApp" */;
@@ -165,10 +283,13 @@
 				40CE0FF12AE2252100F93427 /* Sources */,
 				40CE0FF22AE2252100F93427 /* Frameworks */,
 				40CE0FF32AE2252100F93427 /* Resources */,
+				39B025902AEE61680081903A /* Embed Foundation Extensions */,
+				39B025B32AEE63C40081903A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				39B0258E2AEE61680081903A /* PBXTargetDependency */,
 			);
 			name = InventoryManagementApp;
 			packageProductDependencies = (
@@ -184,9 +305,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					39B025792AEE61670081903A = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					40CE0FF42AE2252100F93427 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -208,11 +332,21 @@
 			projectRoot = "";
 			targets = (
 				40CE0FF42AE2252100F93427 /* InventoryManagementApp */,
+				39B025792AEE61670081903A /* StockWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		39B025782AEE61670081903A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3901FB562AEFD0F7003A87BB /* Assets.xcassets in Resources */,
+				39B025892AEE61680081903A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40CE0FF32AE2252100F93427 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,35 +360,124 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		39B025762AEE61670081903A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3901FB652AEFE268003A87BB /* Item+CoreDataProperties.swift in Sources */,
+				3901FB672AEFE26E003A87BB /* StockTake+CoreDataProperties.swift in Sources */,
+				39B025862AEE61670081903A /* StockWidget.swift in Sources */,
+				3901FB642AEFE265003A87BB /* StockTakeModel.swift in Sources */,
+				39B0258B2AEE61680081903A /* StockWidget.intentdefinition in Sources */,
+				3901FB682AEFE271003A87BB /* StockTake+CoreDataClass.swift in Sources */,
+				3901FB632AEFD98C003A87BB /* InventoryManagementApp.xcdatamodeld in Sources */,
+				39B025822AEE61670081903A /* StockWidgetBundle.swift in Sources */,
+				3901FB662AEFE26B003A87BB /* Item+CoreDataClass.swift in Sources */,
+				39B025842AEE61670081903A /* StockWidgetLiveActivity.swift in Sources */,
+				3901FB692AEFE27F003A87BB /* CoreDataManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40CE0FF12AE2252100F93427 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				40634DBD2AE2318700A8D2B0 /* StockTakeModel.swift in Sources */,
-				40F7519F2AEA87CD00CA1705 /* StockTake+CoreDataProperties.swift in Sources */,
+				40634DC32AE2320F00A8D2B0 /* StockTake+CoreDataProperties.swift in Sources */,
+				40634DB62AE22F4400A8D2B0 /* Item+CoreDataProperties.swift in Sources */,
 				40634DD42AE690A200A8D2B0 /* ItemListView.swift in Sources */,
 				40634DB92AE22F9100A8D2B0 /* Networking.swift in Sources */,
-				40F751A12AEA87CD00CA1705 /* Item+CoreDataProperties.swift in Sources */,
+				392F68742AE8B93D008266AF /* SettingsView.swift in Sources */,
 				40634DD02AE65A4C00A8D2B0 /* HomePageView.swift in Sources */,
 				40CE0FF92AE2252100F93427 /* InventoryManagementAppApp.swift in Sources */,
-				40F7519E2AEA87CD00CA1705 /* StockTake+CoreDataClass.swift in Sources */,
 				40634DC92AE24AE200A8D2B0 /* ItemListViewModel.swift in Sources */,
+				39B0258C2AEE61680081903A /* StockWidget.intentdefinition in Sources */,
 				40634DBF2AE2319100A8D2B0 /* ItemModel.swift in Sources */,
 				40634DD62AE7580900A8D2B0 /* StockTakeViewModel.swift in Sources */,
 				40634DDC2AE7891E00A8D2B0 /* ItemDetailsView.swift in Sources */,
 				40CE10002AE2252100F93427 /* ContentView.swift in Sources */,
-				40F751A02AEA87CD00CA1705 /* Item+CoreDataClass.swift in Sources */,
 				40CE0FFE2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld in Sources */,
+				40634DC22AE2320F00A8D2B0 /* StockTake+CoreDataClass.swift in Sources */,
 				40634DBB2AE22F9E00A8D2B0 /* CoreDataManager.swift in Sources */,
 				40634DC52AE2450E00A8D2B0 /* UPCService.swift in Sources */,
 				40634DDA2AE7661D00A8D2B0 /* StockListView.swift in Sources */,
 				40634DCB2AE24D8F00A8D2B0 /* NotificationService.swift in Sources */,
+				40634DB52AE22F4400A8D2B0 /* Item+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		39B0258E2AEE61680081903A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39B025792AEE61670081903A /* StockWidgetExtension */;
+			targetProxy = 39B0258D2AEE61680081903A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		39B025912AEE61680081903A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = StockWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 78RVQ7KNVP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StockWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StockWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = johnny.InventoryManagementApp.StockWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		39B025922AEE61680081903A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = StockWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 78RVQ7KNVP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StockWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StockWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = johnny.InventoryManagementApp.StockWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		40CE10072AE2252300F93427 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -367,6 +590,7 @@
 		40CE100A2AE2252300F93427 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = InventoryManagementApp/InventoryManagementApp.entitlements;
@@ -377,6 +601,7 @@
 				DEVELOPMENT_TEAM = 78RVQ7KNVP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InventoryManagementApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -405,6 +630,7 @@
 		40CE100B2AE2252300F93427 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = InventoryManagementApp/InventoryManagementApp.entitlements;
@@ -414,6 +640,7 @@
 				DEVELOPMENT_TEAM = 78RVQ7KNVP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InventoryManagementApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -442,6 +669,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		39B025932AEE61680081903A /* Build configuration list for PBXNativeTarget "StockWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39B025912AEE61680081903A /* Debug */,
+				39B025922AEE61680081903A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		40CE0FF02AE2252100F93427 /* Build configuration list for PBXProject "InventoryManagementApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
