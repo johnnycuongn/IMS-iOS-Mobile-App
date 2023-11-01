@@ -8,9 +8,9 @@
 import WidgetKit
 import SwiftUI
 
-struct StockWidgetBundle: WidgetBundle {
+struct StockWidgetBundle: WidgetBundle { // widget buddle
     var body: some Widget {
-        StockWidget()
-        StockWidgetLiveActivity()
+        StockWidget() // import stock widget
+        StockWidgetLiveActivity() // showcases live activity of the widget 
     }
 }

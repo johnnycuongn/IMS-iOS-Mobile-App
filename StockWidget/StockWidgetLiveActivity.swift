@@ -9,7 +9,7 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct StockWidgetAttributes: ActivityAttributes {
+struct StockWidgetAttributes: ActivityAttributes { // this sets the attributes of the stock widget
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         var value: Int
@@ -19,11 +19,11 @@ struct StockWidgetAttributes: ActivityAttributes {
     var name: String
 }
 
-struct StockWidgetLiveActivity: Widget {
+struct StockWidgetLiveActivity: Widget { // Live activity version of the stock widget
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: StockWidgetAttributes.self) { context in
             // Lock screen/banner UI goes here
-            VStack {
+            VStack { // This is the UI components for the banner
                 Text("Hello")
             }
             .activityBackgroundTint(Color.cyan)
@@ -56,10 +56,13 @@ struct StockWidgetLiveActivity: Widget {
     }
 }
 
+// preview of the live activity stock widget for SwiftUI design
 struct StockWidgetLiveActivity_Previews: PreviewProvider {
     static let attributes = StockWidgetAttributes(name: "Me")
     static let contentState = StockWidgetAttributes.ContentState(value: 3)
 
+    
+    // different previews for states of the widget 
     static var previews: some View {
         attributes
             .previewContext(contentState, viewKind: .dynamicIsland(.compact))
