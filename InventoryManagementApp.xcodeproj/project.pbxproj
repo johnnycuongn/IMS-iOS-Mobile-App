@@ -235,11 +235,11 @@
 			children = (
 				392F68752AE8CCDF008266AF /* Info.plist */,
 				40634DC72AE2499B00A8D2B0 /* View */,
-				40634DC62AE2499400A8D2B0 /* ViewModel */,
 				40634DB72AE22F8700A8D2B0 /* Services */,
 				40634DAE2AE22F3400A8D2B0 /* Model */,
 				40CE0FF82AE2252100F93427 /* InventoryManagementAppApp.swift */,
 				40CE0FFF2AE2252100F93427 /* ContentView.swift */,
+				40634DC62AE2499400A8D2B0 /* ViewModel */,
 				40CE10012AE2252300F93427 /* Assets.xcassets */,
 				40CE10032AE2252300F93427 /* InventoryManagementApp.entitlements */,
 				40CE0FFC2AE2252100F93427 /* InventoryManagementApp.xcdatamodeld */,
