@@ -8,14 +8,17 @@
 import Foundation
 import CoreData
 
-class ItemModel {
+class ItemModel { // Model class to look after the inventory items
     
+    
+    // Shared instances
     private var storage: CoreDataStorage = CoreDataStorage.shared
     private var stockTakeModel = StockTakeModel.shared
     
     /**
      itemModel.addItem(name: "Item 1", inventory: 50, lowerLimit: 10, barcode: "1234567890")
      */
+    // function to add item , list of parameters that are needed such as name, inventory, lowerlimit, bardcode etc
     func addItem(name: String, inventory: Int32, lowerLimit: Int32, barcode: String) throws {
         let item = Item(context: storage.context)
         item.name = name
@@ -28,6 +31,7 @@ class ItemModel {
     /**
             Use this one to update inventory, instead of update stock take
      */
+    // update an existing item , also follows similarly with parameters such as item name, newName and newInventory
     func updateItem(item: Item, newName: String = "", newInventory: Int32) throws {
         let oldInventory = item.inventory
             
@@ -44,7 +48,7 @@ class ItemModel {
             stockTakeModel.addStockTake(status: StockTakeStatus.complete, inventoryFrom: oldInventory, inventoryTo: newInventory, description: "Automatic Stock Take for \(String(describing: item.name))", item: item)
         }
         
-        NotificationService.shared.checkInventoryAndNotify(item: item)
+        NotificationService.shared.checkInventoryAndNotify(item: item) // to ensure and send notification if inventory is below the threshold
         
         storage.saveContext()
     }
@@ -55,6 +59,8 @@ class ItemModel {
          stockTakeModel.addStockTake(status: "Pending", inventoryFrom: 5, inventoryTo: 10, description: "Description", item: firstItem)
      }
      */
+    
+    // This function will return the array of items
     func getItems() throws -> [Item]  {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         do {
@@ -70,7 +76,7 @@ class ItemModel {
         storage.context.delete(item)
         storage.saveContext()
     }
-    
+    // function to clear databsee of all items
     func removeAllItems() throws {
         let items = try getItems()  // Fetch all items
         for item in items {
@@ -78,12 +84,12 @@ class ItemModel {
         }
         storage.saveContext()  // Save the context to commit the deletions
     }
-    public func scheduleDailyNotification() {
+    public func scheduleDailyNotification() { // daily notification function to infom users about low inventory
             do {
                 let items = try self.getItems()
                 var lowStockItems: [Item] = []
 
-                for item in items {
+                for item in items { // low stock items
                     if item.inventory < 5 {
                         lowStockItems.append(item)
                     }
@@ -96,6 +102,7 @@ class ItemModel {
                     body += "\(item.name ?? "N/A") (\(item.inventory))"
                 }
 
+                // This schedules the notification 
                 NotificationService.shared.scheduleDailyNotification(notificationID: "daily_stocks", title: title, body: body)
 
             } catch {
