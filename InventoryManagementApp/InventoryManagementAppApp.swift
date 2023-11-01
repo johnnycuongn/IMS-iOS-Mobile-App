@@ -4,7 +4,7 @@
 //
 //  Created by Johnny on 20/10/2023.
 //
-
+// this is the main main view, entry point of the app 
 import SwiftUI
 import WidgetKit
 

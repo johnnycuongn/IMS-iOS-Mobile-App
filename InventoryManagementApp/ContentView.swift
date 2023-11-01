@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 import UserNotifications
 
-enum CustomTab {
+enum CustomTab { // This is the different custom tabs in the Contentview! which you can see in the navigation bar
     case home
     case settings
     case profile
@@ -17,7 +17,7 @@ enum CustomTab {
 
 struct ContentView: View {
     
-    @State private var selectedTab: CustomTab = .home
+    @State private var selectedTab: CustomTab = .home // state variable to track which tab is being currently selected
     
     var body: some View {
         NavigationView {
@@ -25,7 +25,7 @@ struct ContentView: View {
                 VStack {
                     // Content
                     ZStack(alignment: .leading) {
-                        if selectedTab == .home {
+                        if selectedTab == .home { // shows page view based on what has been selected
                             HomePageView()
                         } else if selectedTab == .settings {
                             Text("Settings Content")
@@ -39,7 +39,7 @@ struct ContentView: View {
                     HStack {
                         Button(action: { selectedTab = .home }) {
                             VStack {
-                                Image(systemName: "house.fill")
+                                Image(systemName: "house.fill") // home tab
                                 Text("Home")
                             }
                         }
@@ -47,7 +47,7 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        Button(action: { selectedTab = .settings }) {
+                        Button(action: { selectedTab = .settings }) { // This is the setting tab
                             VStack {
                                 Image(systemName: "gearshape.fill")
                                 Text("Settings")
@@ -57,7 +57,7 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        Button(action: { selectedTab = .profile }) {
+                        Button(action: { selectedTab = .profile }) { // profile tab
                             VStack {
                                 Image(systemName: "person.fill")
                                 Text("Profile")
@@ -69,7 +69,7 @@ struct ContentView: View {
                     .padding()
                 }
             }
-        }.onAppear {
+        }.onAppear { // when contentivew is displayed , it will automatically request notification permission and schedule a daily notification
             NotificationService.shared.checkAndRequestNotificationPermission()
             ItemModel().scheduleDailyNotification()
         }
