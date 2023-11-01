@@ -21,11 +21,19 @@ final class CoreDataStorage { // This manages Core Data operations
         print(NSPersistentContainer.defaultDirectoryURL()) // prints the default URL for Core data
         
         let container = NSPersistentContainer(name: "InventoryManagementApp") // THis is the container we created for the inventory management app
+        
+        let url = URL.storeURL(for: "group.Isabelle.InventoryManagementApp", databaseName: "InventoryManagementApp")
+//        let url = FileManager.appGroupContainerURL.appendingPathComponent("InventoryManagementApp.sqlite")
+        let storeDescription = NSPersistentStoreDescription (url: url)
+        container.persistentStoreDescriptions = [storeDescription]
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? { // error handling here :)
                 assertionFailure("CoreDataStorage: Unresolved error \(error), \(error.userInfo)")
             }
         })
+    
+        
         return container
     }()
     
@@ -49,4 +57,13 @@ final class CoreDataStorage { // This manages Core Data operations
         persistentContainer.performBackgroundTask(block)
     }
     
+}
+
+public extension URL {
+    static func storeURL( for appGroup: String, databaseName: String) -> URL {
+        guard let fileContainer = FileManager.default.containerURL (forSecurityApplicationGroupIdentifier: appGroup) else {
+            fatalError ("Unable to create URL for \(appGroup)")
+        }
+        return fileContainer.appendingPathComponent("\(databaseName).sqlite")
+    }
 }

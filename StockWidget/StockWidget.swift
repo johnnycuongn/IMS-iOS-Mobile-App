@@ -17,7 +17,7 @@ struct StockWidget: Widget {
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            StockWidgetEntryView(entry: entry)
+            StockWidgetEntryView(entry: entry).environment(\.managedObjectContext, CoreDataStorage.shared.context)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
@@ -36,35 +36,32 @@ struct Provider: IntentTimelineProvider {
         let placeholderMessage = "No stock takes available"
 //        let placeholderStockTake = StockTake()
 //        placeholderStockTake.stock_description = placeholderMessage
+        let stockTakes = StockTakeModel.shared.getStockTakes()
+        
+        var entry = StockWidgetEntry(date: Date(), stockTake: nil)
+        
+        if let firstStock = stockTakes.first {
+            entry = StockWidgetEntry(date: Date(), stockTake: firstStock)
+        }
 
-        let entry = StockWidgetEntry(date: Date(), stockTake: nil)
+        
         completion(entry)
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<StockWidgetEntry>) -> Void) {
             var entries: [StockWidgetEntry] = []
 
-        do {
-                let stockTakes = try StockTakeModel.shared.getStockTakes()
-            print("Fetched \(stockTakes.count) stock takes.")
-            if stockTakes.isEmpty {
-                            // If there are no stock takes, add a placeholder entry
-//                            let placeholderStockTake = nil
-                            let entry = StockWidgetEntry(date: Date(), stockTake: nil)
-                            entries.append(entry)
-                        }
-            else if let mostRecentStockTake = stockTakes.first {
-                    let entry = StockWidgetEntry(date: Date(), stockTake: mostRecentStockTake)
-                    entries.append(entry)
-                    print(entry)
-                }
-            } catch {
-                print("Error fetching StockTakes: \(error)")
+        let stockTakes = StockTakeModel().getStockTakes { stockTakes in
+            for stock in stockTakes {
+                let entry = StockWidgetEntry(date: Date(), stockTake: stock)
+                entries.append(entry)
             }
 
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }
+        
+    }
 }
 
 struct StockWidgetEntry: TimelineEntry {
@@ -75,6 +72,9 @@ struct StockWidgetEntry: TimelineEntry {
 struct StockWidgetEntryView : View {
     var entry: StockWidgetEntry
     
+//    @FetchRequest (sortDescriptors: [])
+//    private var stocks: FetchedResults<StockTake>
+    
     init(entry: StockWidgetEntry) {
         self.entry = entry
         print("entry", entry)
@@ -83,6 +83,7 @@ struct StockWidgetEntryView : View {
     var body: some View {
         
         if let stock = entry.stockTake, let item = stock.item {
+//            Text("\(stocks.count)")
             if stock.status == nil {
                 Text("No stock takes available")
             } else {
@@ -93,6 +94,8 @@ struct StockWidgetEntryView : View {
                     Text("Description: \(stock.stock_description ?? "")")
                 }
             }
+        } else {
+            Text("No stock data available")
         }
 //        if let stock = entry.stockTake, let status = stock.status {
 //            Text("Yeah there is stock")

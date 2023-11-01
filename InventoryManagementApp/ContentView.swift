@@ -37,33 +37,34 @@ struct ContentView: View {
                     
                     // Custom Tab Bar
                     HStack {
-                        Button(action: { selectedTab = .home }) {
-                            VStack {
-                                Image(systemName: "house.fill")
-                                Text("Home")
-                            }
-                        }
-                        .foregroundColor(selectedTab == .home ? .blue : .gray)
+                        Spacer()
+//                        Button(action: { selectedTab = .home }) {
+//                            VStack {
+//                                Image(systemName: "house.fill")
+//                                Text("Home")
+//                            }
+//                        }
+//                        .foregroundColor(selectedTab == .home ? .blue : .gray)
                         
                         Spacer()
                         
-                        Button(action: { selectedTab = .settings }) {
-                            VStack {
-                                Image(systemName: "gearshape.fill")
-                                Text("Settings")
-                            }
-                        }
-                        .foregroundColor(selectedTab == .settings ? .blue : .gray)
-                        
-                        Spacer()
-                        
-                        Button(action: { selectedTab = .profile }) {
-                            VStack {
-                                Image(systemName: "person.fill")
-                                Text("Profile")
-                            }
-                        }
-                        .foregroundColor(selectedTab == .profile ? .blue : .gray)
+//                        Button(action: { selectedTab = .settings }) {
+//                            VStack {
+//                                Image(systemName: "gearshape.fill")
+//                                Text("Settings")
+//                            }
+//                        }
+//                        .foregroundColor(selectedTab == .settings ? .blue : .gray)
+//
+//                        Spacer()
+//
+//                        Button(action: { selectedTab = .profile }) {
+//                            VStack {
+//                                Image(systemName: "person.fill")
+//                                Text("Profile")
+//                            }
+//                        }
+//                        .foregroundColor(selectedTab == .profile ? .blue : .gray)
                     }
                     .frame(height: 40)
                     .padding()

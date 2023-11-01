@@ -73,6 +73,21 @@ public class StockTakeModel {
         }
     }
     
+    public func getStockTakes(completion: @escaping ([StockTake]) -> Void) {
+        let fetchRequest: NSFetchRequest<StockTake> = StockTake.fetchRequest()
+        
+        // Sort by updated_at
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "updated_at", ascending: false)]
+        
+        do {
+            let stockTakes = try storage.context.fetch(fetchRequest)
+            completion(stockTakes)
+        } catch {
+            print("Failed to fetch StockTakes: \(error)")
+            completion([])
+        }
+    }
+    
     func removeStockTake(stockTake: StockTake) {
         storage.context.delete(stockTake)
         storage.saveContext()
